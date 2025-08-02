@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './loginpage.css'
 
 export default function LoginPage(){
@@ -7,6 +8,8 @@ export default function LoginPage(){
             <input type="text"placeholder="Enter Your Username" />
             <input type="password" placeholder="Enter Your Password" />
             <button>Login</button>
+
+            <Link to="/">Home</Link>
         </div>
     )
 }

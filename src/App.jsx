@@ -6,6 +6,7 @@ import Testing from './components/testing'
 import LoginPage from './pages/loginpage.jsx'
 import HomePage from './pages/homePage.jsx'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import "tailwindcss";
 
 function App() {
   const [count, setCount] = useState(0)

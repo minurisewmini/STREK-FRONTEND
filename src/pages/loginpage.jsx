@@ -7,7 +7,7 @@ export default function LoginPage(){
             <h1>Login page</h1>
             <input type="text"placeholder="Enter Your Username" />
             <input type="password" placeholder="Enter Your Password" />
-            <button className='btn-blue round-corners red'>Login</button>
+            <button className='bg-yellow-500'>Login</button>
 
             <Link to="/">Home</Link>
         </div>

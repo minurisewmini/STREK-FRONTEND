@@ -24,19 +24,16 @@
   font-size: 14px;
 }
 
-.login-container button {
-  width: 100%;
-  padding: 10px;
-  background-color: #5c67f2;
-  color: white;
-  font-size: 16px;
-  border: none;
-  border-radius: 5px;
-  margin-top: 10px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.btn-blue{
+    background-color: blue;
+
+}
+.round-corners{
+    border-radius: 10px;
 }
 
-.login-container button:hover {
-  background-color: #3d48c2;
+.red{
+    border: 5px solid red;
 }
+
+

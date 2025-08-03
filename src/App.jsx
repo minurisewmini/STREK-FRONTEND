@@ -7,6 +7,7 @@ import LoginPage from './pages/loginpage.jsx'
 import HomePage from './pages/homePage.jsx'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import RegisterPage from './pages/signinPage.jsx'
+import AdminHomePage from './pages/adminHomePage.jsx'
 
 
 function App() {
@@ -15,17 +16,14 @@ function App() {
   return (
     <div className='bg-red-500 h-[100vh]'>
      <BrowserRouter>
-        <Routes path="/*">
+        <Routes>
             <Route path="/" element={<HomePage/>}/>
             <Route path="/login" element={<LoginPage/>}/>
             <Route path="/signup" element={<RegisterPage/>}/>
             <Route path="/*" element={<HomePage/>}/>
-            <Route path="/admin/*s" element={<AdminHomePage/>}/>
+            <Route path="/admin/*" element={<AdminHomePage />}/>
 
         </Routes>
-
-
-
 
      </BrowserRouter>
 </div>

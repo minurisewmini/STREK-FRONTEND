@@ -8,6 +8,7 @@ import HomePage from './pages/homePage.jsx'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import RegisterPage from './pages/signinPage.jsx'
 import AdminHomePage from './pages/adminHomePage.jsx'
+import ContactPage from './pages/contact.jsx'
 
 
 
@@ -23,6 +24,8 @@ function App() {
             <Route path="/signup" element={<RegisterPage/>}/>
             <Route path="/admin/*" element={<AdminHomePage />} />
             <Route path="*" element={<HomePage />} />
+            <Route path="/home/contact" element={<ContactPage />} />
+            
 
            
 

@@ -10,6 +10,7 @@ import RegisterPage from './pages/signinPage.jsx'
 import AdminHomePage from './pages/adminHomePage.jsx'
 
 
+
 function App() {
   const [count, setCount] = useState(0)
 
@@ -20,8 +21,10 @@ function App() {
             <Route path="/" element={<HomePage/>}/>
             <Route path="/login" element={<LoginPage/>}/>
             <Route path="/signup" element={<RegisterPage/>}/>
-            <Route path="/*" element={<HomePage/>}/>
-            <Route path="/admin/*" element={<AdminHomePage />}/>
+            <Route path="/admin/*" element={<AdminHomePage />} />
+            <Route path="*" element={<HomePage />} />
+
+           
 
         </Routes>
 

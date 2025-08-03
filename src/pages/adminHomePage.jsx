@@ -1,52 +1,54 @@
 import { Link } from "react-router-dom";
 import { GoGraph } from "react-icons/go";
-import { MdShoppingCart, MdPeople, MdDashboard } from "react-icons/md";
 import { FiBox } from "react-icons/fi";
+import { MdShoppingCart, MdPeople } from "react-icons/md";
+import { Routes, Route } from "react-router-dom";
 
 export default function AdminHomePage() {
   return (
-    <div className="bg-gray-100 w-full h-screen flex">
+    <div className="flex w-full h-screen">
       {/* Sidebar */}
-      <div className="w-[20%] h-full bg-indigo-700 text-white flex flex-col py-10 px-4 space-y-6 shadow-lg">
-        <h2 className="text-2xl font-bold mb-8 text-center">Admin Panel</h2>
-
+      <div className="w-[20%] bg-blue-500 text-white flex flex-col items-center py-10 space-y-6 shadow-lg">
+        <h2 className="text-2xl font-bold mb-8">Admin Panel</h2>
         <Link
           to="/admin/dashboard"
-          className="flex items-center space-x-3 hover:bg-indigo-600 px-4 py-2 rounded transition"
+          className="hover:bg-blue-600 px-4 py-2 rounded-md w-full text-center flex items-center justify-center gap-2"
         >
-          <MdDashboard className="text-xl" />
-          <span>Dashboard</span>
+          <GoGraph className="text-xl" />
+          Dashboard
         </Link>
-
         <Link
           to="/admin/products"
-          className="flex items-center space-x-3 hover:bg-indigo-600 px-4 py-2 rounded transition"
+          className="hover:bg-blue-600 px-4 py-2 rounded-md w-full text-center flex items-center justify-center gap-2"
         >
           <FiBox className="text-xl" />
-          <span>Products</span>
+          Products
         </Link>
-
         <Link
           to="/admin/orders"
-          className="flex items-center space-x-3 hover:bg-indigo-600 px-4 py-2 rounded transition"
+          className="hover:bg-blue-600 px-4 py-2 rounded-md w-full text-center flex items-center justify-center gap-2"
         >
           <MdShoppingCart className="text-xl" />
-          <span>Orders</span>
+          Orders
         </Link>
-
         <Link
           to="/admin/customers"
-          className="flex items-center space-x-3 hover:bg-indigo-600 px-4 py-2 rounded transition"
+          className="hover:bg-blue-600 px-4 py-2 rounded-md w-full text-center flex items-center justify-center gap-2"
         >
           <MdPeople className="text-xl" />
-          <span>Customers</span>
+          Customers
         </Link>
       </div>
 
-      {/* Main Content */}
-      <div className="w-[80%] h-full p-10">
-        <h1 className="text-3xl font-bold text-gray-800">Welcome to Admin Dashboard</h1>
-        {/* You can render other nested routes here */}
+      {/* Main Content Area */}
+      <div className="w-[80%] bg-gray-100 p-10 overflow-y-auto">
+        <Routes path="/*">
+          <Route path="/dashboard" element={<h1>Dashboard</h1>} />
+          <Route path="/products" element={<h1>Products</h1>} />
+          <Route path="/orders" element={<h1>Orders</h1>} />
+          <Route path="/customers" element={<h1>Customers</h1>} />
+          <Route path="/*" element={<h1>404 error</h1>} />
+        </Routes>
       </div>
     </div>
   );

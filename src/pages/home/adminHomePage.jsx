@@ -3,7 +3,7 @@ import { GoGraph } from "react-icons/go";
 import { FiBox } from "react-icons/fi";
 import { MdShoppingCart, MdPeople } from "react-icons/md";
 import { Routes, Route } from "react-router-dom";
-import AdminProductsPage from "./admin/adminProduct";
+import AdminProductsPage from "../admin/adminProduct";
 
 export default function AdminHomePage() {
   return (

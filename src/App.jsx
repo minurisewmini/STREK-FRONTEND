@@ -8,7 +8,7 @@ import HomePage from './pages/homePage.jsx'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import RegisterPage from './pages/signinPage.jsx'
 import AdminHomePage from './pages/adminHomePage.jsx'
-import ContactPage from './pages/contact.jsx'
+import ContactPage from './pages/home/contact.jsx'
 
 
 

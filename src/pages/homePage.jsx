@@ -1,4 +1,4 @@
-import { Link, Routes, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function HomePage() {
   return (
@@ -33,10 +33,6 @@ export default function HomePage() {
         >
           Login
         </Link>
-
-        <Routes>
-          <Route path="/contact" element={<h1>Contact</h1>} />
-        </Routes>
       </div>
     </div>
   );

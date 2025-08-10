@@ -9,6 +9,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import RegisterPage from './pages/home/signinPage.jsx'
 import AdminHomePage from './pages/home/adminHomePage.jsx'
 import ContactPage from './pages/home/contact.jsx'
+import { Toaster } from 'react-hot-toast'
 
 
 
@@ -18,6 +19,7 @@ function App() {
   return (
     <div className='bg-red-500 h-[100vh]'>
      <BrowserRouter>
+     <Toaster/>
         <Routes>
             <Route path="/" element={<HomePage/>}/>
             <Route path="/login" element={<LoginPage/>}/>

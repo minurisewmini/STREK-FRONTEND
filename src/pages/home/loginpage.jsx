@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import axios from 'axios';
+import { Toaster,toast } from 'react-hot-toast';
 
 export default function LoginPage() {
 
@@ -14,6 +15,7 @@ export default function LoginPage() {
     }).then((res)=>{
 
       if(res.data.user == null){
+        toast.error(res.data.message)
         return
       }
       localStorage.setItem("token",res.data.token)

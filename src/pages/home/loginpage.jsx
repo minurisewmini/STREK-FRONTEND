@@ -18,6 +18,7 @@ export default function LoginPage() {
         toast.error(res.data.message)
         return
       }
+      toast.success("Login success")
       localStorage.setItem("token",res.data.token)
 
       if(res.data.user.type == "admin"){

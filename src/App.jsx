@@ -19,7 +19,7 @@ function App() {
   return (
     <div className='bg-red-500 h-[100vh]'>
      <BrowserRouter>
-     <Toaster/>
+     <Toaster position='top-right'/>
         <Routes>
             <Route path="/" element={<HomePage/>}/>
             <Route path="/login" element={<LoginPage/>}/>

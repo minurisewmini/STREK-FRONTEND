@@ -4,6 +4,7 @@ import { FiBox } from "react-icons/fi";
 import { MdShoppingCart, MdPeople } from "react-icons/md";
 import { Routes, Route } from "react-router-dom";
 import AdminProductsPage from "../admin/adminProduct";
+import AddProductForm from "../admin/addProductForm";
 
 export default function AdminHomePage() {
   return (
@@ -46,7 +47,7 @@ export default function AdminHomePage() {
         <Routes path="/*">
           <Route path="/dashboard" element={<h1>Dashboard</h1>} />
           <Route path="/products" element={<AdminProductsPage/>} />
-          <Route path="/products/addProduct" element={<h1>Add Product</h1>} />
+          <Route path="/products/addProduct" element={<AddProductForm/>} />
           <Route path="/orders" element={<h1>Orders</h1>} />
           <Route path="/customers" element={<h1>Customers</h1>} />
           <Route path="/*" element={<h1>404 error</h1>} />

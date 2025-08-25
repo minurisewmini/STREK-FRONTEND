@@ -1,5 +1,5 @@
 import axios from "axios"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 
 export default function AdminProductsPage(){
@@ -41,28 +41,18 @@ export default function AdminProductsPage(){
         "stock": 150,
         "description": "A lightweight face serum enriched with vitamins and antioxidants to brighten your skin and restore natural radiance.",
         "__v": 0
-    },
-    {
-        "_id": "68852c925ce83dd525e5c39a",
-        "productId": "BP1003",
-        "productName": "Radiance Glow body Serum",
-        "altNames": [
-            "Glow Serum",
-            "Face Radiance Serum"
-        ],
-        "images": [
-            "https://example.com/images/serum-front.jpg",
-            "https://example.com/images/serum-back.jpg"
-        ],
-        "price": 200.99,
-        "lastprice": 250.99,
-        "stock": 150,
-        "description": "A lightweight face serum enriched with vitamins and antioxidants to brighten your skin and restore natural radiance.",
-        "__v": 0
     }
 ]
     )
-console.log(products)
+
+    useEffect(()=>{
+    axios.get("http://localhost:5000/api/products").then((res)=>{
+        console.log(res.data)
+        //setProducts(res.data)
+    })
+},[]
+    )
+//console.log(products)
 
    return(
     <div>
@@ -84,8 +74,8 @@ console.log(products)
    )
 }
 
-async function getProducts() {
-    const res =await axios.get("http://localhost:5000/api/products")
-    console.log(res)
+// async function getProducts() {
+//     const res =await axios.get("http://localhost:5000/api/products")
+//     console.log(res)
 
-}
+// }

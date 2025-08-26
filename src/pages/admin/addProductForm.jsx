@@ -1,6 +1,15 @@
+import { useState } from "react"
+
 export default function AddProductForm(){
 
-    
+    const[productId,setProductID]=useState("");
+    const[productName,setProductName]=useState("");
+    const[altNames,setaltNames]=useState("");
+    const[images,setimages]=useState("");
+    const[price,setprice]=useState("");
+    const[lastprice,setlastprice]=useState("");
+    const[stock,setstock]=useState("");
+    const[description,setdescription]=useState("");
 
 
     return(
@@ -14,7 +23,10 @@ export default function AddProductForm(){
         <label>Product ID</label>
       <input
         type="text"
-        className="p-2 rounded bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-400"
+        className="p-2 rounded bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-400" 
+        placeholder="Enter Product ID"
+        value={productId}
+        onChange={(e)=>{setProductID(e.target.value)}}
       /></div>
 
       <div className="flex flex-col gap-4">
@@ -22,6 +34,7 @@ export default function AddProductForm(){
       <input
         type="text"
         className="p-2 rounded bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-400"
+        placeholder="Enter Product Name"
       /></div>
 
       <div className="flex flex-col gap-4">
@@ -29,6 +42,7 @@ export default function AddProductForm(){
       <input
         type="text"
         className="p-2 rounded bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-400"
+        placeholder="Enter Alternative names"
       /></div>
 
       <div className="flex flex-col gap-4">
@@ -36,6 +50,7 @@ export default function AddProductForm(){
       <input
         type="text"
         className="p-2 rounded bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-400"
+        placeholder="Enter Image URLs"
       /></div>
 
       <div className="flex flex-col gap-4">
@@ -43,6 +58,7 @@ export default function AddProductForm(){
       <input
         type="number"
         className="p-2 rounded bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-400"
+        placeholder="Enter Product price"
       /></div>
 
       <div className="flex flex-col gap-4">
@@ -50,6 +66,7 @@ export default function AddProductForm(){
       <input
         type="number"
         className="p-2 rounded bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-400"
+        placeholder="Enter Last price"
       /></div>
 
     <div className="flex flex-col gap-4">
@@ -57,6 +74,7 @@ export default function AddProductForm(){
       <input
         type="number"
         className="p-2 rounded bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-400"
+        placeholder="Enter the Stock"
       /></div>
 
         <div className="flex flex-col gap-4">
@@ -64,6 +82,7 @@ export default function AddProductForm(){
       <textarea
         type="text"
         className="p-2 rounded bg-gray-100 focus:outline-none focus:ring-2 focus:ring-blue-400"
+        placeholder="Enter Product Description"
       /></div>
 
       <button className="w-full bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-semibold py-3 rounded-lg shadow-md hover:opacity-90 transition">

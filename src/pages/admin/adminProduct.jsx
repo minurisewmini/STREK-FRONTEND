@@ -1,21 +1,24 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import toast from "react-hot-toast";
 import { FaTrash, FaPencilAlt, FaPlus } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 export default function AdminProductsPage() {
-  const [products, setProducts] = useState([
-  ]);
+  const [products, setProducts] = useState([]);
+  const [productsLoaded, setProductsLoaded]=useState(false);
 
   useEffect(() => {
+    if(!productsLoaded){
     axios
       .get("http://localhost:5000/api/products")
       .then((res) => {
-        console.log(res.data);
+        console.log("Use effect is running");
         setProducts(res.data);
+        setProductsLoaded(true);
       })
-      .catch((err) => console.error(err));
-  }, []);
+
+    }}, [productsLoaded]);
 
   return (
     <div className="p-8 bg-gray-50 min-h-screen relative">
@@ -32,6 +35,7 @@ export default function AdminProductsPage() {
 >
   <FaPlus />
 </Link>
+
 
       <h1 className="text-2xl font-bold mb-6 text-gray-800">
         Admin Product Page
@@ -92,10 +96,31 @@ export default function AdminProductsPage() {
                     {product.description}
                   </td>
                   <td className="px-6 py-4 text-center flex justify-center gap-4">
-                    <button className="text-blue-500 hover:text-blue-700 transition">
+                    <button className="text-blue-500 hover:text-blue-700 transition"
+                    title="Edit">
                       <FaPencilAlt />
                     </button>
-                    <button className="text-red-500 hover:text-red-700 transition">
+                    <button className="text-red-500 hover:text-red-700 transition"
+                    title="Delete"
+                    
+                    onClick={()=>{
+                        alert(product.productId)
+                        const token=localStorage.getItem("token");
+
+                        
+                        axios.delete(`http://localhost:5000/api/products/${product.productId}`, {
+  headers: { Authorization: `Bearer ${token}` },
+})
+.then(res => {
+  toast.success("Product deleted successfully");
+  setProductsLoaded(false);
+})
+.catch(err => toast.error("Failed to delete product"));
+
+
+                    }}
+                    
+                    >
                       <FaTrash />
                     </button>
                   </td>

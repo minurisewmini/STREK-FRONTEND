@@ -34,9 +34,9 @@ export default function LoginPage() {
     <div className="flex justify-center items-center w-full h-screen bg-gradient-to-br from-purple-700 to-blue-600">
     <div className='w-[450px] h-[450px] bg-white flex flex-col items-center' >
       <img src='/logo.jpg' className='rounded-full w-[150px]'/>
-      <span>Email</span>
 
-      <input placeholder='Your email' className="w-72 p-2 border border-gray-400 rounded mb-4" 
+      <span>Email</span>
+      <input type="email" placeholder='Your email' className="w-72 p-2 border border-gray-400 rounded mb-4" 
       value={email} onChange={(e)=>{
         setEmail(e.target.value)
       }} />
